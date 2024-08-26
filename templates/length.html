@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <header>
+        <h1>Unit Converter</h1>
+        <nav>
+            <a href="/length">Length</a>
+            <a href="/weight">Weight</a>
+            <a href="/temperature">Temperature</a>
+        </nav>
+    </header>
+    <main>
+        <form method="post">
+            <input type="text" name="value" placeholder="Enter value" required>
+            <select name="fromUnit">
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inch">Inch</option>
+                <option value="foot">Foot</option>
+                <option value="yard">Yard</option>
+                <option value="mile">Mile</option>
+            </select>
+            <select name="toUnit">
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inch">Inch</option>
+                <option value="foot">Foot</option>
+                <option value="yard">Yard</option>
+                <option value="mile">Mile</option>
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+        
+        {{ if .Result }}
+        <p>{{ .Value }} {{ .FromUnit }} = {{ .Result }} {{ .ToUnit }}</p>
+        {{ end }}
+
+    </main>
+</body>
+</html>

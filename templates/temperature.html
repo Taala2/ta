@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <header>
+        <h1>Unit Converter</h1>
+        <nav>
+            <a href="/length">Length</a>
+            <a href="/weight">Weight</a>
+            <a href="/temperature">Temperature</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Temperature Converter</h2>
+<form method="post">
+    <input type="text" name="value" placeholder="Enter value" required>
+    <select name="fromUnit">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+    </select>
+    <select name="toUnit">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+    </select>
+    <button type="submit">Convert</button>
+</form>
+
+{{ if .Result }}
+<p>{{ .Value }} {{ .FromUnit }} = {{ .Result }} {{ .ToUnit }}</p>
+{{ end }}
+    </main>
+</body>
+</html>
